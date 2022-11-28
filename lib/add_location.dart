@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_test/application/location_riverpod.dart';
 import 'package:riverpod_test/main.dart';
@@ -22,7 +20,7 @@ class AddLocation extends ConsumerWidget {
         title: const Text('Dodajanje lokacije'),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Text("Dodaj"),
+        child: const Text("Dodaj"),
         onPressed: () {
           ref.read(locationNotifierProvider.notifier).addLoc();
         },
@@ -30,7 +28,7 @@ class AddLocation extends ConsumerWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             height: 300,
             child: ListView.builder(
               itemCount: locations.length,
@@ -39,9 +37,9 @@ class AddLocation extends ConsumerWidget {
               },
             ),
           ),
-          Text("dodajanje lokacije"),
+          const Text("dodajanje lokacije"),
           ElevatedButton(
-            child: Text("Reset"),
+            child: const Text("Reset"),
             onPressed: () {
               ref.read(locationNotifierProvider.notifier).init();
             },

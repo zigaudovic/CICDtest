@@ -19,7 +19,7 @@ class LocationNotifier extends StateNotifier<LocationState> {
   }
 
   void init() async {
-    state = LocationState.loading();
+    state = const LocationState.loading();
     var response = await locationRepository.getAllLocations();
     await Future.delayed(const Duration(milliseconds: 5000));
 
@@ -39,7 +39,7 @@ class LocationNotifier extends StateNotifier<LocationState> {
       state.maybeMap(
           loaded: (value) {
             var locs = value.locations.toList();
-            locs.add(new Location(
+            locs.add(const Location(
                 uuid: "2",
                 numberOfEmptyGardens: 55,
                 name: "drugaLoca",
