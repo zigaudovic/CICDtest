@@ -11,7 +11,6 @@ part 'location_riverpod.freezed.dart';
 
 @injectable
 class LocationNotifier extends StateNotifier<LocationState> {
-  s
   final ILocationRepository locationRepository;
 
   LocationNotifier({required this.locationRepository})
