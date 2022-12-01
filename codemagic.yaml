@@ -41,7 +41,7 @@ workflows:
         echo "flutter.sdk=$HOME/programs/flutter" > "$FCI_BUILD_DIR/android/local.properties"
       - flutter packages pub get
       - flutter packages pub run build_runner build --delete-conflicting-outputs
-      - flutter build apk --release --build-number=$PROJECT_BUILD_NUMBER
+      - flutter build apk --release --build-name=1.0.$PROJECT_BUILD_NUMBER --build-number=$PROJECT_BUILD_NUMBER
       - find . -name "Podfile" -execdir pod install \;
       - flutter build ios --release --no-codesign
     artifacts:
